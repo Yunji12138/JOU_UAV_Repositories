@@ -1,0 +1,8 @@
+prefix=/home/orangepi/mycode_ws/devel
+
+Name: ui_pkg
+Description: Description of ui_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

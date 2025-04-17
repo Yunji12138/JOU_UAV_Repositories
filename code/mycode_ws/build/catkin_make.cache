@@ -1,0 +1,2 @@
+keyboard_goal:sensor_fusion_pkg:ui_pkg:voice_process_pkg:xf_mic_asr_offline_line
+-DCATKIN_DEVEL_PREFIX=/home/orangepi/mycode_ws/devel -DCMAKE_INSTALL_PREFIX=/home/orangepi/mycode_ws/install -G Unix Makefiles
