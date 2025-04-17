@@ -1,0 +1,3 @@
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/CMakeFiles/rebuild_cache.dir
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/CMakeFiles/edit_cache.dir
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate.dir

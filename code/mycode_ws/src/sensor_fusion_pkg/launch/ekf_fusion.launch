@@ -1,0 +1,19 @@
+<launch>
+  <!-- 启动高度订阅 -->
+  <node pkg="sensor_fusion_pkg" type="height_pub_node" name="height_pub_node" output="screen" />
+
+  <!-- 替换高度 -->
+  <node pkg="sensor_fusion_pkg" type="height_replace" name="height_replace" output="screen" />
+
+  <node pkg="ui_pkg" type="ui_node" name="ui_node" output="screen" />
+  <!-- TODO -->
+
+  <!-- 2. 启动高度转odom -->
+  <!-- <node pkg="sensor_fusion_pkg" type="height_to_odom_node" name="height_to_odom_node" output="screen" /> -->
+
+  <!-- 3. 启动EKF -->
+  <!-- <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization_node" output="screen">
+    <rosparam command="load" file="$(find sensor_fusion_pkg)/config/ekf.yaml" />
+  </node> -->
+
+</launch>

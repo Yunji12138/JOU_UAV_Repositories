@@ -1,0 +1,14 @@
+# Target labels
+ ftxui-populate
+# Source files and their labels
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate.rule
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate-complete.rule
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-install.rule
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-mkdir.rule
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-download.rule
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-patch.rule
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-configure.rule
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-build.rule
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-test.rule
+/home/orangepi/mycode_ws/build/_deps/ftxui-subbuild/ftxui-populate-prefix/src/ftxui-populate-stamp/ftxui-populate-skip-update.rule

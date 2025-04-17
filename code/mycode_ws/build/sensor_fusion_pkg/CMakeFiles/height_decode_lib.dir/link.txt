@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/orangepi/mycode_ws/devel/lib/libheight_decode_lib.a  CMakeFiles/height_decode_lib.dir/lib/DEV_Config.c.o CMakeFiles/height_decode_lib.dir/lib/dev_hardware_UART.c.o CMakeFiles/height_decode_lib.dir/lib/rpi_gpiod.c.o CMakeFiles/height_decode_lib.dir/lib/TOF_Sense.c.o
+/usr/bin/ranlib /home/orangepi/mycode_ws/devel/lib/libheight_decode_lib.a

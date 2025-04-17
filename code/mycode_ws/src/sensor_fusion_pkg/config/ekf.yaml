@@ -1,0 +1,19 @@
+ekf_filter_node:
+  ros__parameters:
+    frequency: 50.0  # 滤波频率
+    two_d_mode: false  # 必须设为 false，以启用3D融合
+    sensor_timeout: 0.1  # 传感器超时阈值
+
+    # 输入话题配置
+    odom0: /vins_fusion/imu_propagate  # VINS的IMU传播位姿
+    odom0_config: [true,  true,  true,   # X, Y, Z 位置
+                   true,  true,  true,   # 绕X, Y, Z 旋转
+                   true,  true,  true]   # X, Y, Z 速度
+    odom0_differential: false  # 非差分模式
+
+    # 雷达高度数据（需转换为Pose或Odometry消息）
+    pose1: /height_odom  # 假设雷达数据发布为pose或odom话题
+    pose1_config: [false, false,  true,   # 仅启用Z轴位置
+                   false, false, false,   # 禁用旋转
+                   false, false, false]   # 禁用速度
+    pose1_differential: false
