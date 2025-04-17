@@ -12,4 +12,11 @@
 
 #### [【TortoiseGit】TortoiseGit安装和配置详细说明](https://blog.csdn.net/weixin_44299027/article/details/121178817?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522DC139748-4BA6-4656-B8BD-337ADC30B866%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=DC139748-4BA6-4656-B8BD-337ADC30B866&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-121178817-null-null.142^v100^control&utm_term=TortoiseGit&spm=1018.2226.3001.4187)
 
-主要维护：Yunji12138 
+
+
+CAD中的UAV文件夹为无人机装配体，uav是无数传方案，uav_data_transmission为有数传方案
+
+
+
+主要维护：Yunji12138 ，hell123o
+
