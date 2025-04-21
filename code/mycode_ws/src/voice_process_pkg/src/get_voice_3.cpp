@@ -14,7 +14,7 @@
 
 #define LOCAL_TMP_FILE "/home/orangepi/mycode_ws/src/voice_process_pkg/voice_save_flie/origin_tmp.pcm"
 #define REMOTE_FILE "/data/audio.pcm"
-#define RECORD_TIME 10   //录制时长
+#define RECORD_TIME 1.1  //录制时长
 #define CHANNELS 6
 #define SAMPLE 16
 
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
     {
         char record_cmd[256];
         //同步阻塞
-        snprintf(record_cmd, sizeof(record_cmd), "adb shell \"arecord -D hw:1,0 -f S16_LE -r 16000 -c 6 -d %d %s\"",RECORD_TIME,REMOTE_FILE);
+        snprintf(record_cmd, sizeof(record_cmd), "adb shell \"arecord -D hw:1,0 -f S16_LE -r 16000 -c 6 -d %f %s\"",RECORD_TIME,REMOTE_FILE);
         // 处理adb arecord失败
         int record_cmd_ret = system(record_cmd);
         if (record_cmd_ret != 0) 

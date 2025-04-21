@@ -12,7 +12,6 @@ void MatplotDraw::plotMultiChannel(const std::vector<std::vector<double>>& chann
     {
         x[i] = i;
     }
-        
 
     plt::clf(); // 清空上一次绘图内容
     // 创建子图
@@ -62,10 +61,64 @@ void MatplotDraw::matplot_draw_thread()
     }
 }
 
+void MatplotDraw::matplot_draw_Spectrum_thread()
+{
+    while(running_)
+    {
+        std::unique_lock<std::mutex> lock(spectrum_mutex_);
+        spectrum_cv_.wait(lock, [this] { return !spectrum_queue_.empty() || !running_; });
+        if(!running_) break;
+
+        auto spectrum_vector = spectrum_queue_.front();
+        spectrum_queue_.pop();
+        lock.unlock();
+        plotSpectrum(spectrum_vector);
+    }
+}
+
+void MatplotDraw::plotSpectrum(const std::vector<std::pair<double,double>>& spectrum_vector)
+{
+    std::vector<double> angles, spectrum;
+    for (const auto& p : spectrum_vector) {
+        angles.push_back(p.first);
+        spectrum.push_back(p.second);
+    }
+
+    plt::clf();  // 清空旧图
+    plt::plot(angles, spectrum);
+    plt::xlabel("Angle (degrees)");
+    plt::ylabel("Spectrum Value");
+    plt::title("MUSIC DOA Spectrum");
+    plt::grid(true);
+    plt::pause(0.001);  // 显示图像
+}
+
+void MatplotDraw::spectrumCallback(const voice_process_pkg::PairArray::ConstPtr& spectrum_msg)
+{
+    std::vector<std::pair<double, double>> spectrum_data;
+
+    for (const auto& p : spectrum_msg->data)
+    {
+        double first = p.first;
+        double second = p.second;
+        spectrum_data.emplace_back(first, second);
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(spectrum_mutex_);
+        spectrum_queue_.push(spectrum_data);
+    }
+    spectrum_cv_.notify_one();
+
+}
+
+
 int main(int argc,char** argv)
 {
     ros::init(argc,argv,"draw_node");
+    plt::ion();
     MatplotDraw draw;
+
 
     ros::AsyncSpinner spinner(1);  // 使用异步 spinner 支持多线程 callback
     spinner.start();
